@@ -1,4 +1,4 @@
-const nbButterflies = 100;
+const nbButterflies = 1;
 var conf, scene, camera, cameraCtrl, light, renderer;
 var whw, whh;
 
@@ -14,7 +14,7 @@ var raycaster = new THREE.Raycaster();
 
 function init() {
   conf = {
-    attraction: 0.03,
+    attraction: 0.07,
     velocityLimit: 1.2,
     move: true,
     followMouse: true,
@@ -31,13 +31,13 @@ function init() {
 
   initScene();
 
-  const gui = new dat.GUI();
-  gui.add(conf, 'move');
-  gui.add(conf, 'followMouse');
-  gui.add(conf, 'attraction', 0.01, 0.1);
-  gui.add(conf, 'velocityLimit', 0.1, 2);
-  gui.add(conf, 'shuffle');
-  gui.close();
+  // const gui = new dat.GUI();
+  // gui.add(conf, 'move');
+  // gui.add(conf, 'followMouse');
+  // gui.add(conf, 'attraction', 0.01, 0.1);
+  // gui.add(conf, 'velocityLimit', 0.1, 2);
+  // gui.add(conf, 'shuffle');
+  // gui.close();
 
   onWindowResize();
   window.addEventListener('resize', onWindowResize, false);
@@ -55,8 +55,8 @@ function initScene() {
 
   camera.position.z = 75;
 
-  bodyTexture = new THREE.TextureLoader().load('res/b1.png');
-  wingTexture1 = new THREE.TextureLoader().load('res/b1w.png');
+  bodyTexture = new THREE.TextureLoader().load('res/body.png');
+  wingTexture1 = new THREE.TextureLoader().load('res/wing.png');
   wingTexture2 = new THREE.TextureLoader().load('res/b2w.png');
   wingTexture3 = new THREE.TextureLoader().load('res/b3w.png');
   bodyTexture4 = new THREE.TextureLoader().load('res/b4.png');
@@ -109,7 +109,7 @@ function Butterfly() {
 	{ bodyTexture: bodyTexture4, bodyW: 6, bodyH: 10, bodyY: 2, wingTexture: wingTexture4, wingW: 15, wingH: 20, wingX: 8 },
   ];
 
-  this.init(confs[Math.floor(rnd(4))]);
+  this.init(confs[0]);//Math.floor(rnd(4))]);
 }
 
 Butterfly.prototype.init = function (bconf) {
