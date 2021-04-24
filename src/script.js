@@ -57,10 +57,10 @@ function initScene() {
 
   bodyTexture = new THREE.TextureLoader().load('res/body.png');
   wingTexture1 = new THREE.TextureLoader().load('res/wing.png');
-  wingTexture2 = new THREE.TextureLoader().load('res/b2w.png');
-  wingTexture3 = new THREE.TextureLoader().load('res/b3w.png');
-  bodyTexture4 = new THREE.TextureLoader().load('res/b4.png');
-  wingTexture4 = new THREE.TextureLoader().load('res/b4w.png');
+  // wingTexture2 = new THREE.TextureLoader().load('res/b2w.png');
+  // wingTexture3 = new THREE.TextureLoader().load('res/b3w.png');
+  // bodyTexture4 = new THREE.TextureLoader().load('res/b4.png');
+  // wingTexture4 = new THREE.TextureLoader().load('res/b4w.png');
 
   butterflies = [];
   for (var i = 0; i < nbButterflies; i++) {
